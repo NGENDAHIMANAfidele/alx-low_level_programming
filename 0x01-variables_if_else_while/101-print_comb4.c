@@ -5,7 +5,7 @@
  */
 int main(void)
 {
-	int a;
+	int c;
 	int b;
 	int c;
 
@@ -15,7 +15,7 @@ int main(void)
 		{
 			for (c = 0 ; c < 10 ; c++)
 			{
-				if (i < j && j < k)
+				if (a < b && b < c)
 				{
 					putchar(a + '0');
 					putchar(b + '0');
