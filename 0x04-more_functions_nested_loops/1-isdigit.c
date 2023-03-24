@@ -1,11 +1,11 @@
 #include "main.h"
 /**
- * _isdigit - chack paramete 0 and 9
+ * _isdigit - check paramete c for  0 and 9
  * Return: 1 and 0
  */
 int _isdigit(int c)
 {
-	if (c >=48 && c <= 57)
+	if (c >= 48 && c <= 57)
 	{
 		return (1);
 	}
