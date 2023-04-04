@@ -1,6 +1,6 @@
 #include "main.h"
-/*
- * 0_memset - intry point
+/**
+ * _memset - intry point
  * @s:destination
  * @b: constant
  * @n:size
@@ -8,9 +8,9 @@
  */
 char *_memset(char *s, char b, unsigned int n)
 {
-	unsigned int i;
+	 int i = 0;
 
-	for (;i > 0; i++)
+	for (; i > 0; i++)
 		s[i] = b;
 	n--;
 	return (s);
