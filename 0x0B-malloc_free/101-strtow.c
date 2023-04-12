@@ -1,43 +1,47 @@
-#include "main.h"
 #include <stdlib.h>
 #include <string.h>
 
+#define MAX_WORD_LENGTH 100
+/**
+ * strtow - function display the word for new line
+ * @str:input
+ * Return: 0;
+ */
+
 char **strtow(char *str)
 {
-	int count;
-	char *ptr;
 	char **words;
-	char *token;
-	int i;
-	int j;
+	int i, j;
+	char *word_end;
+	int word_len;
+	char *word;
 
-	count = 0;
-	ptr = str;
-
+	words = malloc(sizeof(char *) * (strlen(str) / 2 + 1));
+	i = 0;
 	if (str == NULL || *str == '\0')
 	{
 	return (NULL);
 	}
-	while (*ptr != '\0')
-	{
-	if (*ptr == ' ')
-	{
-	count++;
-	}
-	ptr++;
-	}
-	count++;
-	words = (char **)malloc(count * sizeof(char *));
 	if (words == NULL)
 	{
 	return (NULL);
 	}
-	i = 0;
-	token = strtok(str, " ");
-	while (token != NULL)
+	while (*str != '\0')
 	{
-	words[i] = (char *)malloc((strlen(token) + 1) * sizeof(char));
-	if (words[i] == NULL)
+	while (*str == ' ')
+	{
+	str++;
+	}
+	word_end = str;
+	while (*word_end != ' ' && *word_end != '\0')
+	{
+	word_end++;
+	}
+	word_len = word_end - str;
+	if (word_len > 0)
+	{
+	word = malloc(sizeof(char) * (word_len + 1));
+	if (word == NULL)
 	{
 	for (j = 0; j < i; j++)
 	{
@@ -46,9 +50,11 @@ char **strtow(char *str)
 	free(words);
 	return (NULL);
 	}
-	strcpy(words[i], token);
-	i++;
-	token = strtok(NULL, " ");
+	strncpy(word, str, word_len);
+	word[word_len] = '\0';
+	words[i++] = word;
+	}
+	str = word_end;
 	}
 	words[i] = NULL;
 	return (words);
