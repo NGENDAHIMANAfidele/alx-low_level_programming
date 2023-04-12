@@ -1,6 +1,7 @@
 #include "main.h"
 /**
- * 0-isupper.c - check the retun.
+ * _isupper.c - check the retun.
+ * @c: input
  * Return: Alway 0.
  */
 int _isupper(int c)
