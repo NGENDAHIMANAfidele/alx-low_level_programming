@@ -7,21 +7,19 @@
  * @size:size
  * Return:output
  */
-
-void* _calloc(unsigned int nmemb, unsigned int size)
+void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	void* i;
-
-	i = malloc(nmemb * size);
+	void *ptr;
 
 	if (nmemb == 0 || size == 0)
 	{
 	return (NULL);
 	}
-	if (i == NULL)
+	ptr = malloc(nmemb * size);
+	if (ptr == NULL)
 	{
 	return (NULL);
 	}
-	memset(i, 0, nmemb * size);
-	return (i);
+	memset(ptr, 0, nmemb * size);
+	return (ptr);
 }
