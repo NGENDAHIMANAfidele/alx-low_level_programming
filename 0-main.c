@@ -1,29 +1,16 @@
-#include "main.h"
+#include "0-object_like_macro.h"
+#include "0-object_like_macro.h"
 #include <stdio.h>
 
 /**
- * simple_print_buffer - prints buffer in hexa
- * @buffer: the address of memory to print
- * @size: the size of the memory to print
- * Return: Nothing.
+ * main - check the co
+ * Return: Always 0.
  */
-void simple_print_buffer(char *buffer, unsigned int size)
+int main(void)
 {
-	unsigned int i;
+	int s;
 
-	i = 0;
-	while (i < size)
-	{
-	if (i % 10)
-	{
-	printf(" ");
-	}
-	if (!(i % 10) && i)
-	{
-	printf("\n");
-	}
-	printf("0x%02x", buffer[i]);
-	i++;
-	}
-	printf("\n");
+	s = 98 + SIZE;
+	printf("%d\n", s);
+	return (0);
 }
