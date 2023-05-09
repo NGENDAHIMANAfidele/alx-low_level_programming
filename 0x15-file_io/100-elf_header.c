@@ -27,8 +27,8 @@ int main(int argc, char *argv[])
 	n = read(fd, &header, sizeof(header));
 	if (n != sizeof(header))
 	{
-	fprintf(stderr, "Error reading ELF header:
-	%s\n", strerror(errno));
+	fprintf(stderr, "Error reading ELF header:%s\n",
+	strerror(errno));
 	exit(98);
 	}
 	if (memcmp(header.e_ident, ELFMAG, SELFMAG) != 0)
